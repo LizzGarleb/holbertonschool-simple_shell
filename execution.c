@@ -27,8 +27,10 @@ int execution(char **tokens,  char **env)
 		{
 			if (execve(tokens[0], tokens, env) == -1)
 				perror("./hsh");
-				/* Handle error insert here shawty */
+			/* Handle error insert here shawty */
 		}
+		else
+			perror("dumb");
 		path_tok = path(env);
 		tokens[0] = add_path(tokens, path_tok);
 		if (tokens[0] != NULL || tokens != NULL)
